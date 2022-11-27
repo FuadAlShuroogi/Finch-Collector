@@ -3,6 +3,12 @@
 
 <h1>Finch List🕊️</h1>
 
+
+<div class="right-align">
+  <a href="/finches/create" class="waves-effect waves-light btn-large">Add a New Finch</a>
+</div>
+
+
 {% for finch in finches %}
 <a href="/finches/{{finch.id}}">
   <div class="card">
@@ -18,5 +24,4 @@
     </div>
   </div>
 {% endfor %}
-
 {% endblock %}
