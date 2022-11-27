@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Finch
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic.edit import CreateView
+
 
 # Create your views here.
 
@@ -10,9 +11,6 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
-
-def finches_index(request):
-  return render(request, 'finches/index.html', { 'finches': finches })
 
 def finches_index(request):
         finches = Finch.objects.all()

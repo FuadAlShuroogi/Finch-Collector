@@ -6,6 +6,8 @@ class Finch(models.Model):
     breed = models.CharField(max_length=100)
     description = models.CharField(max_length=250)
     age = models.IntegerField()
+    # finch_image = models.ImageField(upload_to='upload/')
+
 
 def __str__(self):
     return self.name
