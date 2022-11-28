@@ -1,8 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Finch
-from django.views.generic.edit import CreateView
-
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
 
 # Create your views here.
 
@@ -24,3 +23,15 @@ class FinchCreate(CreateView):
   model = Finch
   fields = '__all__'
   success_url = '/finches'
+  
+class FinchUpdate(UpdateView):
+  model = Finch
+  # Let's disallow the renaming of a cat by excluding the name field!
+  fields = '__all__'
+  success_url = '/finches'
+
+
+class FinchDelete(DeleteView):
+  model = Finch
+  success_url = '/finches/'
+  

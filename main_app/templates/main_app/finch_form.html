@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <form action="" method="post">
+{% if object %}
+    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+  {% else %}
+    <h1>Add Finch</h1>
+  {% endif %}
+  <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
     {{ form.as_table }}
     </table>
     <div class="section">
-    <input class="waves-effect waves-light btn-large" type="submit" value="Submit">
+      {% if object %}
+      <input class="waves-effect waves-light btn-large" type="submit" value="Update">
+      {% else %}
+      <input class="waves-effect waves-light btn-large" type="submit" value="Add">
+      {% endif %}
     </div>
   </form>
 {% endblock %}

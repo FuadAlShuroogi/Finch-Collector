@@ -14,6 +14,20 @@
   <a href= "{% url 'finches_show' finch.id %}">
   <div class="card hoverable">
     <div class="card-content">
+      <div class="row center-align">
+        <div class="grid-example col s12">
+          <div class="card">
+            <div class="card-image">
+              {% if finch.finch_image %}
+
+              <img src="{{ finch.finch_image.url}}">
+
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
       <span class="card-title">{{ finch.name }}</span>
       <p>Breed: {{ finch.breed }}</p>
       <p>Description: {{ finch.description }}</p>
